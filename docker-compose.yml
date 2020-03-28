@@ -1,0 +1,12 @@
+version: "3.7"
+
+services:
+  test:
+    build: .
+    command: python -u /script.py
+    volumes:
+      - type: bind
+        source: ./script.py
+        target: /script.py
+    environment:
+      - PYTHONUNBUFFERED=1
